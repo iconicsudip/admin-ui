@@ -1,0 +1,152 @@
+.user_table {
+    overflow: auto;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        thead {
+            border-bottom: 1px solid #b1b1b1;
+        }
+        :global(.checkbox){
+            width: 1.1rem;
+                height: 1.1rem;
+        }
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 16px;
+        &:nth-child(1){
+            width:10%;
+        }
+                width: 120px;
+        input[type="text"],
+        select {
+            font-family: "Inter";
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            border-radius: 4px;
+            transition: 0.5s ease border;
+            font-size: 16px;
+            padding: 8px;
+            background: white;
+            width: 100%;
+
+            -webkit-appearance: none;
+            -moz-appearance: none;
+
+            &:focus-visible {
+                border: 1px solid #007bff;
+                outline: none;
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        select {
+            background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+                linear-gradient(135deg, gray 50%, transparent 50%),
+                linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 20px) calc(1em + 2px),
+                calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+        }
+
+        select:focus {
+            background-image: linear-gradient(45deg, #007bff 50%, transparent 50%),
+                linear-gradient(135deg, transparent 50%, #007bff 50%),
+                linear-gradient(to right, #ccc, #ccc);
+            background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em,
+                calc(100% - 2.5em) 0.5em;
+            background-size: 5px 5px, 5px 5px, 1px 1.5em;
+            background-repeat: no-repeat;
+            border-color: #007bff;
+            outline: 0;
+        }
+    }
+
+    thead tr {
+        border-bottom: 1.5px solid #a1a1a1;
+        
+    }
+    tr{
+            border-bottom: 1px solid #b1b1b1;
+        transition: 0.3s ease background-color;
+        &.selected_row{
+            background-color: #f2f2f2;
+        }
+    }
+
+    .actions {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        :global(.save) {
+            background: none;
+            border: none;
+            padding: 4px;
+            font-size: 20px;
+            cursor: pointer;
+            color: green;
+
+            &:hover {
+                color: darkgreen;
+            }
+        }
+
+        :global(.delete) {
+            background: none;
+            border: none;
+            padding: 4px;
+            font-size: 20px;
+            cursor: pointer;
+            color: red;
+
+        }
+
+        :global(.edit) {
+            background: none;
+            border: none;
+            padding: 4px;
+            font-size: 20px;
+            cursor: pointer;
+            color: rgb(85, 85, 85);
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 24px 0;
+
+        :global(.delete-selected) {
+            padding: 12px 24px;
+            background-color: rgb(255, 0, 0);
+            color: white;
+            border: none;
+            border-radius: 24px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.5s ease background-color;
+            &.disable{
+                background: #f2f2f2;
+                    color: #b1b1b1;
+                    cursor: not-allowed;
+                    border: 1px solid #b1b1b1;
+                    &:hover {
+                        background: #f2f2f2;
+                    }
+            }
+            &:hover {
+                background-color: rgb(255, 65, 65);
+            }
+        }
+    }
+}
